@@ -1,0 +1,170 @@
+<h1>
+    <i class="fas fa-hammer"></i>
+    Værktøj
+  </h1>
+  <table>
+    <button (click)="onAddTool()" > Add tool </button>
+    <tr class=" header">
+      <th>
+        ID:
+      </th>
+      <th>
+        Anskaffet:
+      </th>
+      <th>
+        Fabrikat:
+      </th>
+      <th>
+        Model:
+      </th>
+      <th>
+        Serienummer:
+      </th>
+      <th>
+        Type:
+      </th>
+      <th>
+        Ligger i Værktøjkasse(ID):
+      </th>
+      <th>
+      </th>
+    </tr>
+    <tr *ngFor="let tool of tools">
+      <td>
+        <a [routerLink]=" ['tool',tool.VTSerienr]">{{tool.VTSerienr}}</a>
+      </td>
+      <td>
+        {{tool.VTAnskaffet}}
+      </td>
+      <td>
+        {{tool.VTFabrikat}}
+      </td>
+      <td>
+        {{tool.VTModel}}
+      </td>
+      <td>
+        {{tool.VTSerienr}}
+      </td>
+      <td>
+        {{tool.VTType}}
+      </td>
+      <td>
+        {{tool.LiggerIvtk}}
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteTool(tool)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  
+  <h1>
+    <i class="fas fa-tools"></i>
+    Værktøjskasser
+  </h1>
+  <button (click)="onAddToolbox()" > Add toolbox </button>
+  <table>
+    <tr class="header">
+      <th>
+        ID:
+      </th>
+      <th>
+        Anskaffet:
+      </th>
+      <th>
+        Fabrikat:
+      </th>
+      <th>
+        Model:
+      </th>
+      <th>
+        Serienummer:
+      </th>
+      <th>
+        Farve:
+      </th>
+      <th>
+        Ejes af Håndværker(ID):
+      </th>
+      <th>
+      </th>
+    </tr>
+    <tr *ngFor="let toolbox of toolboxes">
+      <td>
+        <a [routerLink]="['toolbox',toolbox.VTKEjesAf]"> {{ toolbox.VTKEjesAf }} </a>
+      </td>
+      <td>
+        {{tbx.VTKAnskaffet}}
+      </td>
+      <td>
+        {{tbx.VTKEjesAf}}
+      </td>
+      <td>
+        {{tbx.VTKFabrikat}}
+      </td>
+      <td>
+        {{tbx.VTKSerienummer}}
+      </td>
+      <td>
+        {{tbx.VTKFarve}}
+      </td>
+      <td>
+        {{tbx.VTKEjesAf}}
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteToolBox(toolbox)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  
+  <h1>
+    <i class="fas fa-hard-hat"></i>
+    Håndværker
+  </h1>
+  <button (click)="onAddHandworker()" > Add handwoker </button>
+  <table>
+    <tr class="header">
+      <th>
+        ID:
+      </th>
+      <th>
+        Ansættelsesdato:
+      </th>
+      <th>
+        hvEfternavn:
+      </th>
+      <th>
+        Fagområde:
+      </th>
+      <th>
+        Fornavn:
+      </th>
+      <th>
+        Værktøjskasse:
+      </th>
+      <th>
+      </th>
+    </tr>
+    <tr *ngFor="let handworker of handworkers">
+      <td>
+        <a [routerLink]=" ['handworker', handworker.FirstName]">{{handworker.FirstName}} </a>
+      </td>
+      <td>
+        {{handworker.EmployeeDate}}
+      </td>
+      <td>
+        {{handworker.LastName}}
+      </td>
+      <td>
+        {{handworker.Speciality}}
+      </td>
+      <td>
+        {{handworker.FirstName}}
+      </td>
+      <td>
+        {{handworker.Vaerktoejskasse}}
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteCraftman(man)">Delete</button>
+      </td>
+    </tr>
+  </table>

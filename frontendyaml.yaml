@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delprojektfrontend-grp11
+  namespace: swtdisp-grp11 
+  labels:
+    app: disp-frontend-grp11
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: disp-frontend-grp11
+  template:
+    metadata:
+      labels:
+        app: disp-frontend-grp11
+    spec:
+      containers:
+        - image: "docker.io/llilfaxmachine/disp-frontend:latest"
+          imagePullPolicy: Always
+          name: disp-frontend-grp11
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: frontendservice-grp11
+    namespace: swtdisp-grp11
+spec:
+  selector:
+    app: frontend-grp11
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 80
+  type: LoadBalancer

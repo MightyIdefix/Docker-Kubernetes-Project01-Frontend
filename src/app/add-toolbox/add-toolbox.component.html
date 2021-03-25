@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Værktøjkasse</h1>
+
+    <form (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="vtkAnskaffet">Anskaffet</label>
+            <input type="date" class="form-control" [(ngModel)]="model.VTKAnskaffet" name="VTKAnskaffet" required>
+        </div>
+
+        <div class="form-group">
+            <label for="vtkEjesAf">Ejes Af</label>
+            <input type="text" class="form-control" [(ngModel)]="model.VTKEjesAf" name="VTKEjesAf">
+        </div>
+
+        <div class="form-group">
+            <label for="vtkFabrikat">Fabrikat</label>
+            <input type="number" class="form-control" [(ngModel)]="model.VTKFabrikat" name="VTKFabrikat">
+        </div>
+
+        <div class="form-group">
+            <label for="vtkModel">Model</label>
+            <input type="text" class="form-control" [(ngModel)]="model.VTKModel" name="VTKModel">
+        </div>
+
+
+        <div class="form-group">
+            <label for="vtkSerienummer">Serienummer</label>
+            <input type="text" class="form-control" [(ngModel)]="model.VTKSerienummer" name="VTKSerienummer">
+        </div>
+
+
+        <div class="form-group">
+            <label for="vtkFarve">Farve</label>
+            <input type="text" class="form-control" [(ngModel)]="model.VTKFarve" name="VTKFarve">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>

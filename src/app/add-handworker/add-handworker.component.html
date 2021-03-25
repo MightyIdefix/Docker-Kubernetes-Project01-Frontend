@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Håndværker</h1>
+
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="hvAnsaettelsedato">Ansaettelsedato</label>
+            <input type="date" class="form-control" [(ngModel)]="model.EmployeeDate" name="HVAnsaettelsedato"
+                required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="hvEfternavn">Efternavn</label>
+            <input type="text" class="form-control" [(ngModel)]="model.LastName" name="HVEfternavn">
+        </div>
+
+        <div class="form-group">
+            <label for="hvFagomraade">Fagomraade</label>
+            <input type="text" class="form-control" [(ngModel)]="model.Speciality" name="HVFagomraade">
+        </div>
+
+
+        <div class="form-group">
+            <label for="hvFornavn">Fornavn</label>
+            <input type="text" class="form-control" [(ngModel)]="model.FirstName" name="HVFornavn">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
